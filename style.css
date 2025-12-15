@@ -6,13 +6,23 @@
   font-family: normal;
   src: url(./fonnts.com-Aeonik-Regular.ttf);
 }
+:root {
+  --pri: #fcdec0;
+  --sec: #b4846c;
+  --tre1: #e5b299;
+  --tre2: #7d5a50;
+  --uptone: white;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--pri);
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -20,5 +30,53 @@ html, body {
 #main {
   height: 100%;
   width: 100%;
-  background: black;
+  background: var(--sec);
+}
+#main #nav {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  background: var(--tre1);
+}
+#main .allelem {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  padding-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+#main .allelem .elem {
+  background-color: var(--tre2);
+  overflow: hidden;
+  border-radius: 20px;
+  height: 300px;
+  position: relative;
+  flex-grow: 1;
+  transition: all 0.2s ease;
+}
+#main .allelem .elem img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main .allelem .elem h1 {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 10px;
+  font-family: normal;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--uptone);
+}
+#main .allelem :hover.elem {
+  scale: 102%;
+}
+#main .allelem .elem:active {
+  scale: 0.97;
 }/*# sourceMappingURL=style.css.map */
