@@ -32,12 +32,6 @@ body {
   width: 100%;
   background: var(--sec);
 }
-#main #nav {
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  background: var(--tre1);
-}
 #main .allelem {
   height: 100%;
   width: 100%;
@@ -79,4 +73,11 @@ body {
 }
 #main .allelem .elem:active {
   scale: 0.97;
+}
+#main .fullelem {
+  height: 100%;
+  width: 100%;
+  background: khaki;
+  font-size: 30px;
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -34,13 +34,6 @@ body {
   width: 100%;
   background: var(--sec);
 
-  #nav {
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    background: var(--tre1);
-  }
-
   .allelem {
     height: 100%;
     width: 100%;
@@ -49,9 +42,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    
-    justify-content:space-between;
- 
+
+    justify-content: space-between;
+
     gap: 20px;
 
     .elem {
@@ -62,7 +55,6 @@ body {
       position: relative;
       flex-grow: 1;
       transition: all 0.2s ease;
-      
 
       img {
         height: 100%;
@@ -75,19 +67,26 @@ body {
         bottom: 2%;
         right: 2%;
         font-size: 10px;
-     
+
         font-family: normal;
         text-transform: uppercase;
         font-weight: 900;
         color: var(--uptone);
       }
     }
-    :hover.elem{
-      scale:102%;
+    :hover.elem {
+      scale: 102%;
     }
 
     .elem:active {
       scale: 0.97;
     }
+  }
+  .fullelem {
+    height: 100%;
+    width: 100%;
+    background: khaki;
+    font-size: 30px;
+    display: none;
   }
 }
