@@ -1,4 +1,5 @@
-const alelement = document.querySelectorAll('.elem')//it give the all element in the form of nodelist 
+function openclosecard(){
+  const alelement = document.querySelectorAll('.elem')//it give the all element in the form of nodelist 
 const fullblock = document.querySelectorAll('.fullelem'); //it give full block nodelist 
 const back = document.querySelectorAll(".backo")
 
@@ -30,3 +31,10 @@ back.forEach(function(eleo){
 
 
 })
+}
+
+
+openclosecard()
+
+
+

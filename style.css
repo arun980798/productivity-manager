@@ -12,6 +12,10 @@
   --tre1: #e5b299;
   --tre2: #7d5a50;
   --uptone: white;
+  --todo-pre:#005461;
+  --todo-sec:#018790;
+  --todo-tre1:#00B7B5;
+  --todo-tre2:#F4F4F4;
 }
 
 * {
@@ -83,4 +87,74 @@ body {
   font-size: 30px;
   display: none;
   position: absolute;
+}
+#main .todo-page-full {
+  display: block;
+  background: var(--todo-sec);
+  height: 100%;
+  width: 100%;
+}
+#main .todo-page-full h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: normal;
+  font-size: 3rem;
+}
+#main .todo-page-full .todo-contaner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  height: 80%;
+}
+#main .todo-page-full .todo-contaner .addtodo {
+  background: var(--todo-pre);
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px;
+}
+#main .todo-page-full .todo-contaner .addtodo form {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+#main .todo-page-full .todo-contaner .addtodo form input {
+  width: 100%;
+  padding: 5px;
+  text-transform: capitalize;
+  font-size: 30px;
+  border-radius: 5px;
+  background: var(--todo-tre1);
+  border: none;
+  outline: none;
+}
+#main .todo-page-full .todo-contaner .addtodo form textarea {
+  width: 100%;
+  padding: 5px;
+  text-transform: capitalize;
+  font-size: 30px;
+  border-radius: 5px;
+  background: var(--todo-tre1);
+  border: none;
+  outline: none;
+}
+#main .todo-page-full .todo-contaner .addtodo form button {
+  width: 100%;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 30px;
+  border-radius: 5px;
+  background: var(--tre2);
+  border: none;
+}
+#main .todo-page-full .todo-contaner .showtodo {
+  background: var(--todo-pre);
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */
