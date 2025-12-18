@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  position: absolute;
   justify-content: space-between;
   gap: 20px;
 }
@@ -62,7 +63,7 @@ body {
   position: absolute;
   bottom: 2%;
   right: 2%;
-  font-size: 10px;
+  font-size: 25px;
   font-family: normal;
   text-transform: uppercase;
   font-weight: 900;
@@ -77,7 +78,9 @@ body {
 #main .fullelem {
   height: 100%;
   width: 100%;
+  font-weight: 200;
   background: khaki;
   font-size: 30px;
   display: none;
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */
