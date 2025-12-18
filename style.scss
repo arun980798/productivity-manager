@@ -27,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--pri);
+  font-family: bold;
 }
 
 html,
@@ -120,7 +121,7 @@ body {
   height: 80%;
   .addtodo{
     background: var(--todo-pre);
-    width: 50%;
+    width: 30%;
     height: 100%;
     border-radius: 20px;
    padding: 20px;
@@ -163,17 +164,55 @@ body {
         border-radius: 5px;
         background: var(--tre2);
         border: none;
+        transition: all ease-in-out 0.5s;
         
+
+      }
+      button:active{
+        scale: 0.98;
 
       }
     }
 
   }
+
+  .showtodo::-webkit-scrollbar {
+    display: none;
+  }
   .showtodo{
     background: var(--todo-pre);
-    width: 50%; 
+    width: 70%; 
     height: 100%;
     border-radius: 20px;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+
+    .tasks{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background: var(--todo-tre1);
+      border-radius: 10px;
+      width: 100%;
+   
+
+      h2{
+        font-size: 30px;
+        text-transform: capitalize;
+      }
+
+      button{
+        background: crimson;
+        border-radius: 10px;
+        padding: 5px 10px;
+        text-transform: uppercase;
+      }
+
+    }
   }
 }
 

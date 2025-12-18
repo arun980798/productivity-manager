@@ -23,6 +23,7 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--pri);
+  font-family: bold;
 }
 
 html,
@@ -110,7 +111,7 @@ body {
 }
 #main .todo-page-full .todo-contaner .addtodo {
   background: var(--todo-pre);
-  width: 50%;
+  width: 30%;
   height: 100%;
   border-radius: 20px;
   padding: 20px;
@@ -151,10 +152,40 @@ body {
   border-radius: 5px;
   background: var(--tre2);
   border: none;
+  transition: all ease-in-out 0.5s;
+}
+#main .todo-page-full .todo-contaner .addtodo form button:active {
+  scale: 0.98;
+}
+#main .todo-page-full .todo-contaner .showtodo::-webkit-scrollbar {
+  display: none;
 }
 #main .todo-page-full .todo-contaner .showtodo {
   background: var(--todo-pre);
-  width: 50%;
+  width: 70%;
   height: 100%;
   border-radius: 20px;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+#main .todo-page-full .todo-contaner .showtodo .tasks {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: var(--todo-tre1);
+  border-radius: 10px;
+  width: 100%;
+}
+#main .todo-page-full .todo-contaner .showtodo .tasks h2 {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+#main .todo-page-full .todo-contaner .showtodo .tasks button {
+  background: crimson;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-transform: uppercase;
 }/*# sourceMappingURL=style.css.map */
