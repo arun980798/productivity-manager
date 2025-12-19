@@ -12,10 +12,10 @@
   --tre1: #e5b299;
   --tre2: #7d5a50;
   --uptone: white;
-  --todo-pre:#005461;
-  --todo-sec:#018790;
-  --todo-tre1:#00B7B5;
-  --todo-tre2:#F4F4F4;
+  --todo-pre: #005461;
+  --todo-sec: #018790;
+  --todo-tre1: #00b7b5;
+  --todo-tre2: #f4f4f4;
 }
 
 * {
@@ -144,6 +144,15 @@ body {
   border: none;
   outline: none;
 }
+#main .todo-page-full .todo-contaner .addtodo form .markimp {
+  display: flex;
+  width: 30%;
+  gap: 10px;
+}
+#main .todo-page-full .todo-contaner .addtodo form .markimp label {
+  font-size: 19px;
+  white-space: nowrap;
+}
 #main .todo-page-full .todo-contaner .addtodo form button {
   width: 100%;
   padding: 5px;
@@ -171,19 +180,44 @@ body {
   flex-direction: column;
   gap: 9px;
 }
-#main .todo-page-full .todo-contaner .showtodo .tasks {
+#main .todo-page-full .todo-contaner .showtodo .taskso {
+  background: var(--todo-tre2);
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: start;
   padding: 10px;
-  background: var(--todo-tre1);
-  border-radius: 10px;
-  width: 100%;
 }
-#main .todo-page-full .todo-contaner .showtodo .tasks h2 {
-  font-size: 30px;
+#main .todo-page-full .todo-contaner .showtodo .taskso #left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#main .todo-page-full .todo-contaner .showtodo .taskso #left h2 {
+  color: var(--todo-pre);
   text-transform: capitalize;
+  display: flex;
+  font-size: 35px;
+  align-items: center;
+  gap: 10px;
 }
-#main .todo-page-full .todo-contaner .showtodo .tasks button {
+#main .todo-page-full .todo-contaner .showtodo .taskso #left h2 span {
+  font-size: 10px;
+  background: red;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+#main .todo-page-full .todo-contaner .showtodo .taskso #left .true {
+  opacity: 1;
+}
+#main .todo-page-full .todo-contaner .showtodo .taskso #left .false {
+  opacity: 0;
+}
+#main .todo-page-full .todo-contaner .showtodo .taskso #left p {
+  font-size: 15px;
+  color: var(--todo-pre);
+}
+#main .todo-page-full .todo-contaner button {
   background: crimson;
   border-radius: 10px;
   padding: 5px 10px;

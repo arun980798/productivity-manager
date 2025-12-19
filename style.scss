@@ -15,11 +15,10 @@
   --tre2: #7d5a50;
   --uptone: white;
 
-
-  --todo-pre:#005461;
-  --todo-sec:#018790;
-  --todo-tre1:#00B7B5;
-  --todo-tre2:#F4F4F4;
+  --todo-pre: #005461;
+  --todo-sec: #018790;
+  --todo-tre1: #00b7b5;
+  --todo-tre2: #f4f4f4;
 }
 
 * {
@@ -80,7 +79,6 @@ body {
         text-transform: uppercase;
         font-weight: 900;
         color: var(--uptone);
-
       }
     }
     :hover.elem {
@@ -100,123 +98,155 @@ body {
     display: none;
     position: absolute;
   }
-.todo-page-full{
-  display: block;
-  background: var(--todo-sec);
-  height: 100%;
-  width: 100%;
-  h3{
-    text-align: center;
-    text-transform: uppercase;
-    font-family: normal;
-    font-size: 3rem;
-  }
-
-.todo-contaner{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  height: 80%;
-  .addtodo{
-    background: var(--todo-pre);
-    width: 30%;
+  .todo-page-full {
+    display: block;
+    background: var(--todo-sec);
     height: 100%;
-    border-radius: 20px;
-   padding: 20px;
-    form{
-      display: flex;
-      height: 100%;
-      width: 100%;
-      flex-direction: column;
-      justify-content: space-around;
-      gap: 10px;
-
-
-      input{
-        width: 100%;
-        padding: 5px;
-        text-transform: capitalize;
-        font-size: 30px;
-        border-radius: 5px;
-        background: var(--todo-tre1);
-        border: none;
-        outline: none;
-
-      }
-      textarea{
-        width: 100%;
-        padding: 5px;
-        text-transform: capitalize;
-        font-size: 30px;
-        border-radius: 5px;
-        background: var(--todo-tre1);
-        border: none;
-        outline: none;
-
-      }
-      button{
-        width: 100%;
-        padding: 5px;
-        text-transform: uppercase;
-        font-size: 30px;
-        border-radius: 5px;
-        background: var(--tre2);
-        border: none;
-        transition: all ease-in-out 0.5s;
-        
-
-      }
-      button:active{
-        scale: 0.98;
-
-      }
+    width: 100%;
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-family: normal;
+      font-size: 3rem;
     }
 
-  }
-
-  .showtodo::-webkit-scrollbar {
-    display: none;
-  }
-  .showtodo{
-    background: var(--todo-pre);
-    width: 70%; 
-    height: 100%;
-    border-radius: 20px;
-    padding: 10px;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-
-
-    .tasks{
+    .todo-contaner {
       display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      background: var(--todo-tre1);
-      border-radius: 10px;
-      width: 100%;
-   
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      height: 80%;
+      .addtodo {
+        background: var(--todo-pre);
+        width: 30%;
+        height: 100%;
+        border-radius: 20px;
+        padding: 20px;
+        form {
+          display: flex;
+          height: 100%;
+          width: 100%;
+          flex-direction: column;
+          justify-content: space-around;
+          gap: 10px;
 
-      h2{
-        font-size: 30px;
-        text-transform: capitalize;
+          input {
+            width: 100%;
+            padding: 5px;
+            text-transform: capitalize;
+            font-size: 30px;
+            border-radius: 5px;
+            background: var(--todo-tre1);
+            border: none;
+            outline: none;
+          }
+          textarea {
+            width: 100%;
+            padding: 5px;
+            text-transform: capitalize;
+            font-size: 30px;
+            border-radius: 5px;
+            background: var(--todo-tre1);
+            border: none;
+            outline: none;
+          }
+          .markimp {
+            display: flex;
+            width: 30%;
+            gap: 10px;
+            label {
+              font-size: 19px;
+              white-space: nowrap;
+            }
+          }
+
+          button {
+            width: 100%;
+            padding: 5px;
+            text-transform: uppercase;
+            font-size: 30px;
+            border-radius: 5px;
+            background: var(--tre2);
+            border: none;
+            transition: all ease-in-out 0.5s;
+          }
+          button:active {
+            scale: 0.98;
+          }
+        }
       }
 
-      button{
+      .showtodo::-webkit-scrollbar {
+        display: none;
+      }
+      .showtodo {
+        background: var(--todo-pre);
+        width: 70%;
+        height: 100%;
+        border-radius: 20px;
+        padding: 10px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        .taskso{
+          background: var(--todo-tre2);
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+          padding: 10px;
+          #left{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            h2{
+              color: var(--todo-pre);
+              text-transform: capitalize;
+              display: flex;
+              font-size: 35px;
+              align-items: center;
+              gap: 10px;
+              span{
+                font-size: 10px;
+                background: red;
+                border-radius: 10px;
+                padding: 5px 10px;
+  
+              }
+            }
+
+  
+            .true{
+              opacity: 1;
+            }
+            .false{
+              opacity: 0;
+            }
+
+            p{
+              font-size: 15px;
+              color: var(--todo-pre);
+            }
+
+          }
+          
+
+
+         
+        }
+
+
+      }
+
+      button {
         background: crimson;
         border-radius: 10px;
         padding: 5px 10px;
         text-transform: uppercase;
       }
-
     }
   }
-}
-
-}
-
-
 }
