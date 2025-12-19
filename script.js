@@ -22,6 +22,16 @@ let currenttask = [
 
 
 
+if(localStorage.getItem("currenttask")){
+ currenttask = JSON.parse(localStorage.getItem("currenttask"))
+
+}
+else{
+  console.log("task list is empty")
+}
+
+
+
 //use to open close task 
 function openclosecard() {
   const alelement = document.querySelectorAll('.elem')//it give the all element in the form of nodelist 
@@ -85,34 +95,28 @@ function rendertask() {
 }
 rendertask();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 form.addEventListener("submit", function (eme) {
   eme.preventDefault();
+
   currenttask.push({
     task: input.value,
     details: textarea.value,
     imp: taskceckbox.checked,
   })
+
+  localStorage.setItem("currenttask",JSON.stringify(currenttask))
+
   console.log(currenttask)
   input.value = ''
   textarea.value = ''
   taskceckbox.checked = false;
+   
 
+
+
+ 
   rendertask();
 })//form submit and add task to  lest 
+
+
 
