@@ -1,7 +1,7 @@
-let form = document.querySelector('#forme')
-let input = document.querySelector(' #forme input');
-let textarea = document.querySelector(' #forme textarea')
-let taskceckbox = document.querySelector('.markimp input')
+let form = document.querySelector('#forme')//target todo form
+let input = document.querySelector(' #forme input'); //target todo form input 
+let textarea = document.querySelector(' #forme textarea')// target todo form textarea
+let taskceckbox = document.querySelector('.markimp input') //target imp check in form todo
 let currenttask = [
   {
     task: "mandir jao",
@@ -18,7 +18,7 @@ let currenttask = [
     details: "sham ko  jana h ",
     imp: true,
   }
-]
+] //hold all  tasklist of the todo 
 
 
 
@@ -61,14 +61,14 @@ openclosecard()
 
 
 //use to render todo list 
-function rendertask(){
-  
+function rendertask() {
+
 
   let allshowtask = document.querySelector('.showtodo')
-  
-  
+
+
   let sum = ' '
-  
+
   currenttask.forEach(function (ele) {
     sum = sum + ` <div class="taskso  ">
      <div id="left">
@@ -78,12 +78,12 @@ function rendertask(){
    <button>remove</button>
   
   </div>`
-  
+
   })
   allshowtask.innerHTML = sum;
-  
-  }
-  rendertask();
+
+}
+rendertask();
 
 
 
@@ -103,10 +103,16 @@ function rendertask(){
 
 form.addEventListener("submit", function (eme) {
   eme.preventDefault();
-  // console.log(form)
-  // console.log(input.value)
-  // console.log(textarea.value)
-  console.log(taskceckbox.checked)
+  currenttask.push({
+    task: input.value,
+    details: textarea.value,
+    imp: taskceckbox.checked,
+  })
+  console.log(currenttask)
+  input.value = ''
+  textarea.value = ''
+  taskceckbox.checked = false;
 
-})
+  rendertask();
+})//form submit and add task to  lest 
 
