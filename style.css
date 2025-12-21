@@ -90,7 +90,6 @@ body {
   position: absolute;
 }
 #main .todo-page-full {
-  display: block;
   background: var(--todo-sec);
   height: 100%;
   width: 100%;
@@ -222,4 +221,45 @@ body {
   border-radius: 10px;
   padding: 5px 10px;
   text-transform: uppercase;
+}
+#main .dailyplanerfullpage {
+  display: block;
+  background: var(--tre2);
+  padding: 5px;
+}
+#main .dailyplanerfullpage h2 {
+  font-size: 50px;
+  padding: 5px;
+}
+#main .dailyplanerfullpage .dailyshediv {
+  height: 83%;
+  background: var(--sec);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: auto;
+  padding: 10px;
+}
+#main .dailyplanerfullpage .dailyshediv .dayplanertime {
+  display: flex;
+  background: var(--tre1);
+  width: 49%;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#main .dailyplanerfullpage .dailyshediv .dayplanertime p {
+  font-size: 20px;
+  white-space: nowrap;
+}
+#main .dailyplanerfullpage .dailyshediv .dayplanertime input {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
 }/*# sourceMappingURL=style.css.map */

@@ -1,38 +1,3 @@
-let form = document.querySelector('#forme')//target todo form
-let input = document.querySelector(' #forme input'); //target todo form input 
-let textarea = document.querySelector(' #forme textarea')// target todo form textarea
-let taskceckbox = document.querySelector('.markimp input') //target imp check in form todo
-let currenttask = [
-  {
-    task: "mandir jao",
-    details: "subja jana h ",
-    imp: true,
-  },
-  {
-    task: "padne  jao",
-    details: "dophar me  jana h ",
-    imp: false,
-  },
-  {
-    task: "ghumne  jao",
-    details: "sham ko  jana h ",
-    imp: true,
-  }
-] //hold all  tasklist of the todo 
-
-
-
-if(localStorage.getItem("currenttask")){
- currenttask = JSON.parse(localStorage.getItem("currenttask"))
-
-}
-else{
-  console.log("task list is empty")
-}
-
-
-
-//use to open close task 
 function openclosecard() {
   const alelement = document.querySelectorAll('.elem')//it give the all element in the form of nodelist 
   const fullblock = document.querySelectorAll('.fullelem'); //it give full block nodelist 
@@ -70,8 +35,33 @@ function openclosecard() {
 openclosecard()
 
 
+
+function todo(){
+  let form = document.querySelector('#forme')//target todo form
+let input = document.querySelector(' #forme input'); //target todo form input 
+let textarea = document.querySelector(' #forme textarea')// target todo form textarea
+let taskceckbox = document.querySelector('.markimp input') //target imp check in form todo
+let currenttask = [] //hold all  tasklist of the todo 
+
+
+
+if(localStorage.getItem("currenttask")){
+ currenttask = JSON.parse(localStorage.getItem("currenttask"))
+
+}
+else{
+  console.log("task list is empty")
+}
+
+
+
+//use to open close task 
+
+
+
 //use to render todo list 
 function rendertask() {
+  localStorage.setItem("currenttask",JSON.stringify(currenttask))
 
 
   let allshowtask = document.querySelector('.showtodo')
@@ -79,18 +69,29 @@ function rendertask() {
 
   let sum = ' '
 
-  currenttask.forEach(function (ele) {
+  currenttask.forEach(function (ele,idx) {
     sum = sum + ` <div class="taskso  ">
      <div id="left">
       <h2  class="">${ele.task} <span class="${ele.imp}">imp </span></h2>
        <p>${ele.details}</p>
      </div>
-   <button>remove</button>
+   <button id ="${idx}">remove</button>
   
   </div>`
 
   })
   allshowtask.innerHTML = sum;
+
+
+  let  remove = document.querySelectorAll(".taskso  button");
+remove.forEach( function(btn){
+  btn.addEventListener("click", function(){
+   currenttask.splice(btn.id,"1")
+ rendertask();
+
+  })
+
+})
 
 }
 rendertask();
@@ -104,7 +105,6 @@ form.addEventListener("submit", function (eme) {
     imp: taskceckbox.checked,
   })
 
-  localStorage.setItem("currenttask",JSON.stringify(currenttask))
 
   console.log(currenttask)
   input.value = ''
@@ -116,7 +116,36 @@ form.addEventListener("submit", function (eme) {
 
  
   rendertask();
+
+
 })//form submit and add task to  lest 
 
 
 
+
+
+
+}
+todo();
+function dailyplaner (){ 
+let dayplandata = JSON.parse(localStorage.getItem('dayplanerdata'))|| {}
+let dailyshediv = document.querySelector(".dailyshediv");
+let hours = Array.from({length:18},( ele,idx)=>{return `${6+idx}:00 - ${7+idx}:00 `})
+let sum = "";
+hours.forEach(function(ele,idx){
+let savedata = dayplandata[idx] ||''
+  sum = sum+`<div class="dayplanertime">
+  <p>${ele}</p>
+  <input id="${idx}" type="text" value ="${savedata}" placeholder="...">
+</div>`
+})
+dailyshediv.innerHTML = sum; 
+  let dailyinput = document.querySelectorAll(".dailyshediv input")
+  dailyinput.forEach(function(ele){
+    ele.addEventListener('input',function(){
+   dayplandata[ele.id] = ele.value;
+ localStorage.setItem('dayplanerdata',JSON.stringify(dayplandata))
+    })
+  })
+}
+dailyplaner()

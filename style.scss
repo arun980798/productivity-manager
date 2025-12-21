@@ -99,7 +99,6 @@ body {
     position: absolute;
   }
   .todo-page-full {
-    display: block;
     background: var(--todo-sec);
     height: 100%;
     width: 100%;
@@ -191,54 +190,45 @@ body {
         flex-direction: column;
         gap: 9px;
 
-        .taskso{
+        .taskso {
           background: var(--todo-tre2);
           border-radius: 10px;
           display: flex;
           justify-content: space-between;
           align-items: start;
           padding: 10px;
-          #left{
+          #left {
             display: flex;
             flex-direction: column;
             gap: 5px;
-            h2{
+            h2 {
               color: var(--todo-pre);
               text-transform: capitalize;
               display: flex;
               font-size: 35px;
               align-items: center;
               gap: 10px;
-              span{
+              span {
                 font-size: 10px;
                 background: red;
                 border-radius: 10px;
                 padding: 5px 10px;
-  
               }
             }
 
-  
-            .true{
+            .true {
               opacity: 1;
             }
-            .false{
+            .false {
               opacity: 0;
             }
 
-            p{
+            p {
               font-size: 15px;
               color: var(--todo-pre);
             }
-
           }
-          
-
-
-         
         }
-
-
       }
 
       button {
@@ -246,6 +236,51 @@ body {
         border-radius: 10px;
         padding: 5px 10px;
         text-transform: uppercase;
+      }
+    }
+  }
+
+  .dailyplanerfullpage {
+    display: block;
+    background: var(--tre2);
+    padding: 5px;
+    h2 {
+      font-size: 50px;
+      padding: 5px;
+    }
+    .dailyshediv {
+      height: 83%;
+      background: var(--sec);
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      overflow: auto;
+      padding: 10px;
+
+      .dayplanertime {
+        display: flex;
+        background: var(--tre1);
+        width: 49%;
+        gap: 5px;
+        align-items: center;
+      
+        margin-bottom: 10px;
+        border-radius: 15px;
+        padding: 10px;
+     
+        height: fit-content;
+
+        p {
+          font-size: 20px;
+          white-space: nowrap;  
+        }
+        input {
+          width: 100%;
+          background: none;
+          outline: none;
+          border: none;
+        }
       }
     }
   }
