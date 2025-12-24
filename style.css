@@ -223,7 +223,6 @@ body {
   text-transform: uppercase;
 }
 #main .dailyplanerfullpage {
-  display: block;
   background: var(--tre2);
   padding: 5px;
 }
@@ -262,4 +261,38 @@ body {
   background: none;
   outline: none;
   border: none;
+}
+#main .motivafullpage {
+  position: relative;
+}
+#main .motivafullpage .motivationcontaner {
+  width: 500px;
+  background: var(--sec);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+}
+#main .motivafullpage .motivationcontaner .motivationwrraper {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+#main .motivafullpage .motivationcontaner .motivationwrraper .moto1 {
+  font-size: 30px;
+  background: var(--tre2);
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+#main .motivafullpage .motivationcontaner .motivationwrraper .moto2 {
+  font-size: 20px;
+  padding: 25px;
+}
+#main .motivafullpage .motivationcontaner .motivationwrraper .moto3 {
+  text-align: right;
+  font-size: 15px;
+  padding: 20px;
+  font-weight: 300;
 }/*# sourceMappingURL=style.css.map */

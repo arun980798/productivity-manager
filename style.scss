@@ -241,7 +241,6 @@ body {
   }
 
   .dailyplanerfullpage {
-    display: block;
     background: var(--tre2);
     padding: 5px;
     h2 {
@@ -264,16 +263,16 @@ body {
         width: 49%;
         gap: 5px;
         align-items: center;
-      
+
         margin-bottom: 10px;
         border-radius: 15px;
         padding: 10px;
-     
+
         height: fit-content;
 
         p {
           font-size: 20px;
-          white-space: nowrap;  
+          white-space: nowrap;
         }
         input {
           width: 100%;
@@ -284,4 +283,48 @@ body {
       }
     }
   }
+  .motivafullpage {
+    position: relative;
+
+    .motivationcontaner {
+      width: 500px;
+      background: var(--sec);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 30px;
+
+      .motivationwrraper {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+
+        .moto1 {
+          font-size: 30px;
+          background: var(--tre2);
+          border-radius: 30px;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .moto2 {
+          font-size: 20px;
+          padding: 25px;
+        }
+
+        .moto3 {
+          text-align: right;
+          font-size: 15px;
+          padding: 20px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+
+
+
+  
 }
