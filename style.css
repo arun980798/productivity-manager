@@ -6,16 +6,30 @@
   font-family: normal;
   src: url(./fonnts.com-Aeonik-Regular.ttf);
 }
+/* Light Theme (Default) */
 :root {
-  --pri: #fcdec0;
-  --sec: #b4846c;
-  --tre1: #e5b299;
-  --tre2: #7d5a50;
-  --uptone: white;
-  --todo-pre: #005461;
-  --todo-sec: #018790;
-  --todo-tre1: #00b7b5;
-  --todo-tre2: #f4f4f4;
+  --pri: #F8FAFC;
+  --sec: #1E293B;
+  --tre1: #CBD5E1;
+  --tre2: #0F172A;
+  --uptone: #FFFFFF;
+  --todo-pre: #2563EB;
+  --todo-sec: #3B82F6;
+  --todo-tre1: #93C5FD;
+  --todo-tre2: #F1F5F9;
+}
+
+/* Dark Theme */
+[data-theme=dark] {
+  --pri: #0F172A;
+  --sec: #E5E7EB;
+  --tre1: #1E293B;
+  --tre2: #F8FAFC;
+  --uptone: #020617;
+  --todo-pre: #3B82F6;
+  --todo-sec: #2563EB;
+  --todo-tre1: #60A5FA;
+  --todo-tre2: #020617;
 }
 
 * {
@@ -41,15 +55,48 @@ body {
   height: 100%;
   width: 100%;
   padding: 20px;
-  padding-top: 80px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  position: absolute;
+  flex-direction: column;
   justify-content: space-between;
+  position: absolute;
   gap: 20px;
 }
-#main .allelem .elem {
+#main .allelem .uppersec {
+  background: blue;
+  flex-grow: 1;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 20px;
+}
+#main .allelem .uppersec .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#main .allelem .uppersec .left #date {
+  font-size: 50px;
+  font-weight: 100;
+}
+#main .allelem .uppersec .left #day {
+  font-size: 40px;
+  font-weight: 100;
+}
+#main .allelem .uppersec .right {
+  font-size: 50px;
+}
+#main .allelem .uppersec .right #time {
+  font-size: 100px;
+}
+#main .allelem .workingdevsec {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+#main .allelem .workingdevsec .elem {
   background-color: var(--tre2);
   overflow: hidden;
   border-radius: 20px;
@@ -58,13 +105,13 @@ body {
   flex-grow: 1;
   transition: all 0.2s ease;
 }
-#main .allelem .elem img {
+#main .allelem .workingdevsec .elem img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#main .allelem .elem h1 {
+#main .allelem .workingdevsec .elem h1 {
   position: absolute;
   bottom: 2%;
   right: 2%;
@@ -74,10 +121,10 @@ body {
   font-weight: 900;
   color: var(--uptone);
 }
-#main .allelem :hover.elem {
+#main .allelem .workingdevsec :hover.elem {
   scale: 102%;
 }
-#main .allelem .elem:active {
+#main .allelem .workingdevsec .elem:active {
   scale: 0.97;
 }
 #main .fullelem {
@@ -264,6 +311,7 @@ body {
 }
 #main .motivafullpage {
   position: relative;
+  background: var(--tre2);
 }
 #main .motivafullpage .motivationcontaner {
   width: 500px;
@@ -295,4 +343,38 @@ body {
   font-size: 15px;
   padding: 20px;
   font-weight: 300;
+}
+#main .promotimerfulage {
+  background: var(--tre2);
+  position: relative;
+}
+#main .promotimerfulage h2 {
+  color: var(--tre1);
+}
+#main .promotimerfulage .pomotimer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#main .promotimerfulage .pomotimer h1 {
+  font-size: 100px;
+  white-space: nowrap;
+}
+#main .promotimerfulage .pomotimer button {
+  background: var(--tre1);
+  color: var(--tre2);
+  font-size: 30px;
+  padding: 5px 20px;
+  text-transform: capitalize;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+  transition: all ease-in-out 0.3s;
+  margin: 10px;
+}
+#main .promotimerfulage .pomotimer button:active {
+  box-shadow: none;
 }/*# sourceMappingURL=style.css.map */

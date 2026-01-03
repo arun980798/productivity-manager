@@ -14,6 +14,8 @@ function openclosecard() {
     //it do click opration where we click 
     //ye lisner kam karega jispe click keya h usko handel karega 
     ele.addEventListener('click', function () {
+     
+
 
       fullblock[ele.id].style.display = "block"
     })
@@ -33,9 +35,6 @@ function openclosecard() {
   })
 }
 openclosecard()
-
-
-
 function todo() {
   let form = document.querySelector('#forme')//target todo form
   let input = document.querySelector(' #forme input'); //target todo form input 
@@ -136,31 +135,136 @@ function dailyplaner() {
   })
 }
 dailyplaner()
+function motivation() {
+
+  let motiqute = document.querySelector(" .moto2 h2 ")
+  let motiaurt = document.querySelector(" .moto3 h3 ")
 
 
 
-function motivation(){
-  
-let motiqute  = document.querySelector(" .moto2 h2 ")
-let motiaurt  = document.querySelector(" .moto3 h3 ")
+  async function fet() {
+    let responce = await fetch("https://api.quotable.io/random")
+    let data = await responce.json()
+    console.log(data)
+    motiqute.innerHTML = data.content
+    motiaurt.innerHTML = data.author
 
 
 
- async function fet() {
-  let responce = await fetch("https://api.quotable.io/random")
-let data = await responce.json()
-console.log(data) 
+  }
 
-motiqute.innerHTML = data.content
-motiaurt.innerHTML = data.author
-  
-  
 
+
+  fet()
 }
-
-
-
-fet()
-}
-
 motivation()
+function pomodorotimer (){
+  
+let totalsec = 1500;
+let timer = document.querySelector(".pomotimer h1")
+let startbtn = document.querySelector(".start-timer");
+let stopbtn = document.querySelector(".start-pause");
+let resetbtn = document.querySelector(".start-reset");
+let timerinterval = null
+
+
+
+function updateime() {
+  let min = Math.floor(totalsec / 60);
+  let sec = totalsec % 60
+  timer.innerHTML = `${String(min).padStart(2, "0")} : ${String(sec).padStart(2, "0")}`
+}
+
+function starttimer(){
+ 
+  timerinterval = setInterval(() => {
+    if(totalsec>0){
+    totalsec--
+    updateime()
+    startbtn.disabled = true;
+  }
+  else{
+   clearInterval(timerinterval)
+ 
+ }
+  },1000)
+ 
+ 
+}
+
+
+function pausetimer (){
+  clearInterval(timerinterval)
+  startbtn.disabled = false;
+}
+
+startbtn.addEventListener("click",starttimer)
+stopbtn.addEventListener("click",pausetimer)
+resetbtn.addEventListener("click",()=>{
+  clearInterval(timerinterval)
+  totalsec = 25*60 ;
+  updateime()
+  startbtn.disabled = false;
+})
+
+
+
+
+}
+pomodorotimer()
+
+
+
+
+
+
+function time (){
+  
+
+function showDate() {
+  const now = new Date();
+  const date = now.toLocaleDateString();
+
+  document.getElementById("date").innerText = date;
+}
+
+setInterval(showDate, 1000);
+
+
+function showDay() {
+  const now = new Date();
+
+  const day = now.toLocaleDateString("en-IN", {
+    weekday: "long"
+  });
+
+  document.getElementById("day").innerText = day;
+}
+
+// update every second (safe & simple)
+setInterval(showDay, 1000);
+
+
+
+function showTime() {
+  const now = new Date();
+
+  const time = now.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+
+  document.getElementById("time").innerText = time;
+}
+
+setInterval(showTime, 1000);
+
+}
+time();
+
+
+
+
+
